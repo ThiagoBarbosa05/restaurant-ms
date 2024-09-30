@@ -1,0 +1,7 @@
+[
+  { "name": "meal" },
+  { "name": "snack" },
+  { "name": "appetizer" },
+  { "name": "dessert" },
+  { "name": "drinks" }
+]
