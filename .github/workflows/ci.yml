@@ -24,7 +24,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: "list target"
-        run: cd target && ls
+        run: ls
 
       - name: 'Generate tag'
         id: generate_tag
