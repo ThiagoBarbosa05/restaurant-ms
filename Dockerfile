@@ -1,8 +1,8 @@
-FROM openjdk:21-jdk
+FROM openjdk:17-jdk
 
 WORKDIR /app
 
-COPY target/restaurant-ms-0.0.1-SNAPSHOT.jar restaurant-ms-0.0.1-SNAPSHOT.jar
+COPY target/restaurant-ms-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
@@ -13,4 +13,4 @@ ENV AWS_ACCESS_ID=${AWS_ACCESS_ID}
 ENV AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 ENV CLOUDFLARE_R2_ENDPOINT=${CLOUDFLARE_R2_ENDPOINT}
 
-ENTRYPOINT ["java", "-jar", "restaurant-ms-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
