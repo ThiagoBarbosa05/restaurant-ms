@@ -21,7 +21,7 @@ jobs:
           cache: 'maven'
 
       - name: 'Build with maven'
-        run: mvn clean install -DskipTests
+        run: mvn clean package -DskipTests
 
       - name: 'Generate tag'
         id: generate_tag
