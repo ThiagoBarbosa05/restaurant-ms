@@ -2,7 +2,7 @@ FROM openjdk:21-jdk
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY target/restaurant-ms-0.0.1-SNAPSHOT.jar restaurant-ms-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8080
 
