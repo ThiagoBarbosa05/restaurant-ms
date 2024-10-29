@@ -5,9 +5,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microservices.restaurant_ms.categories.CategoryRepository;
 import com.microservices.restaurant_ms.categories.Category;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -15,8 +17,10 @@ import java.io.InputStream;
 import java.util.List;
 
 @Component
+@Order(1)
 @Slf4j
 public class CreateCategories implements CommandLineRunner {
+
   @Autowired
   private CategoryRepository categoriesRepository;
 
@@ -31,7 +35,7 @@ public class CreateCategories implements CommandLineRunner {
 
         List<Category> categories = mapper.readValue(inputStream, typeReference);
 
-        categories.stream().forEach(category -> {
+        categories.stream().forEach(category  -> {
             category.setName(category.getName());
             categoriesRepository.save(category);
         });
@@ -43,3 +47,8 @@ public class CreateCategories implements CommandLineRunner {
     }
   }
 }
+
+
+
+
+

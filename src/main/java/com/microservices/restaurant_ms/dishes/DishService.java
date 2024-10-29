@@ -60,7 +60,7 @@ public class DishService {
   }
 
   public Dish getById(UUID dishId) {
-    return this.dishRepository.findById(dishId).orElseThrow(() -> new ResourceNotFoundException(
+    return this.dishRepository.findByIdWithIngredients(dishId).orElseThrow(() -> new ResourceNotFoundException(
       "Prato não encontrado"));
   }
 

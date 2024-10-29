@@ -1,8 +1,10 @@
 package com.microservices.restaurant_ms.dishes;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.microservices.restaurant_ms.attachments.Attachment;
 import com.microservices.restaurant_ms.categories.Category;
+import com.microservices.restaurant_ms.ingredients.Ingredient;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +14,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -39,7 +42,11 @@ public class Dish {
   @JoinColumn(name = "category_id")
   private Category category;
 
-  @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(mappedBy = "dish", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JsonManagedReference
+  private List<Ingredient> ingredients;
+
+  @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.DETACH, CascadeType.REFRESH}, orphanRemoval = true)
   @JoinColumn(name = "attachment_id")
   private Attachment attachment;
 

@@ -1,5 +1,6 @@
 package com.microservices.restaurant_ms.ingredients;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.microservices.restaurant_ms.dishes.Dish;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,8 +25,9 @@ public class Ingredient {
   @Column(nullable = false)
   private String name;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "dish_id")
+  @JsonBackReference
   private Dish dish;
 
 }

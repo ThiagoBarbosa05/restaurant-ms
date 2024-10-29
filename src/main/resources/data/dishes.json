@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Torradas de Parma",
+    "description": "Torrada com presunto Parma e rúcula.",
+    "price": 1729,
+    "ingredients": [
+      "Torrada",
+      "presunto Parma",
+      "rúcula"],
+    "category": "entradas"
+  },
+  {
+    "name": "Tedautunno",
+    "description": "Chá especiado com limão, aquecedor e aromático, perfeito para os dias frios.",
+    "price": 785,
+    "ingredients": [
+      "chá preto",
+      "anis estrelado",
+      "limão",
+      "canela",
+      "água"
+    ],
+    "category": "bebidas"
+  },
+  {
+    "name": "Suco Maracuja",
+    "price": 399,
+    "description": "Suco natural de maracujá, refrescante e nutritivo, rico em vitamina C.",
+    "ingredients": [
+      "polpa de maracujá",
+      "água",
+      "gelo"
+    ],
+    "category": "bebidas"
+  },
+  {
+    "name": "Spaguetti Gambe",
+    "price": 4989,
+    "description": "Macarrão com camarões grelhados e pesto, um prato clássico italiano com um toque fresco e saboroso.",
+    "ingredients": [
+      "macarrão espaguete",
+      "camarões grandes",
+      "pesto",
+      "manjericão fresco",
+      "azeite de oliva",
+      "alho",
+      "queijo parmesão ralado",
+      "sal",
+      "pimenta do reino"
+    ],
+    "category": "Refeições"
+  },
+  {
+    "name": "Sallada Ravanello",
+    "price": 3556,
+    "description": "Salada árabe fresca e leve, com alface, tomate cereja, rabanete, pão sírio e ervas frescas.",
+    "ingredients": [
+      "alface",
+      "tomate cereja",
+      "rabanete",
+      "pão sírio",
+      "coentro",
+      "suco de limão",
+      "azeite de oliva",
+      "sal",
+      "pimenta do reino"
+    ],
+    "category": "entradas"
+  },
+  {
+    "name": "Prugna Pie",
+    "price": 2834,
+    "description": "Torta de ameixas com crosta macia e cobertura doce e azedinha, perfeita para um lanche da tarde ou sobremesa.",
+    "ingredients": [
+      "massa para torta",
+      "ameixas",
+      "açúcar",
+      "ovos",
+      "farinha de trigo",
+      "manteiga",
+      "leite",
+      "açúcar de confeiteiro"
+    ],
+    "category": "sobremesas"
+  },
+  {
+    "name": "Peachy Pastrie",
+    "price": 2345,
+    "description": "Pastéis de massa folhada com recheio de pêssego, uma sobremesa leve e saborosa, perfeita para um chá da tarde.",
+    "ingredients": [
+      "massa folhada",
+      "pêssegos",
+      "açúcar",
+      "amido de milho",
+      "manteiga",
+      "ovos",
+      "hortelã"
+    ],
+    "category": "sobremesas"
+  },
+  {
+    "name": "Macarons",
+    "price": 4810,
+    "description": "Macarons rosa delicados e elegantes, perfeitos para uma ocasião especial.",
+    "ingredients": [
+      "açúcar de confeiteiro",
+      "clara de ovo",
+      "amêndoas em pó",
+      "corante alimentício em gel rosa",
+      "açúcar"
+    ],
+    "category": "sobremesas"
+  },
+  {
+    "name": "Cosmopolitan",
+    "price": 890,
+    "description": "O Cosmopolitan é um coquetel popular, conhecido por sua cor rosa vibrante e sabor cítrico. É uma bebida refrescante e elegante, perfeita para diversas ocasiões.",
+    "ingredients": [
+      "vodca",
+      "liqueur de curaçau",
+      "suco de cranberry",
+      "suco de limão"
+    ],
+    "category": "bebidas"
+  },
+  {
+    "name": "Aperol",
+    "price": 1288,
+    "description": "Aperol Spritz, um coquetel italiano refrescante e levemente amargo, perfeito para os dias quentes. Sua cor laranja vibrante e sabor cítrico o tornam uma escolha popular.",
+    "ingredients": [
+      "Aperol",
+      "Prosecco",
+      "água com gás",
+      "roda de laranja",
+      "ramo de alecrim"
+    ],
+    "category": "bebidas"
+  }
+]

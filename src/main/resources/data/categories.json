@@ -1,7 +1,7 @@
 [
-  { "name": "meal" },
-  { "name": "snack" },
-  { "name": "appetizer" },
-  { "name": "dessert" },
-  { "name": "drinks" }
+  { "name": "Refeições" },
+  { "name": "entradas" },
+  { "name": "lanches" },
+  { "name": "sobremesas" },
+  { "name": "bebidas" }
 ]

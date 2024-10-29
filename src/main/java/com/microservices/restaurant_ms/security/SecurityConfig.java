@@ -23,7 +23,7 @@ public class SecurityConfig {
     httpSecurity.csrf(csrf -> csrf.disable());
 
     httpSecurity.authorizeHttpRequests(auth -> {
-      auth.requestMatchers(HttpMethod.GET,"/api/dishes").permitAll();
+      auth.requestMatchers(HttpMethod.GET,"/api/dishes/**").permitAll();
       auth.anyRequest().authenticated();
     }).addFilterBefore(jwtAuthenticationFilter, BasicAuthenticationFilter.class);
 

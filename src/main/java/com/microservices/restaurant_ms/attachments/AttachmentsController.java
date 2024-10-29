@@ -20,6 +20,7 @@ public class AttachmentsController {
   @PreAuthorize("hasRole('ADMIN')")
   @PostMapping("/upload")
   public ResponseEntity<Object> uploadImage(@RequestParam("file") MultipartFile file) {
+
     try {
       UUID attachmentId = attachmentService.upload(file);
       return ResponseEntity.ok(attachmentId);

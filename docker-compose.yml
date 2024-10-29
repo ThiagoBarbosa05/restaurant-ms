@@ -1,6 +1,27 @@
 version: "3.8"
 
+networks:
+  ms-network:
+    driver: bridge
+
 services:
+  restaurant-ms:
+    image: thiago0503/restaurant-ms:0.1.2
+    container_name: api
+    environment:
+      DATABASE_URL: jdbc:postgresql://pg-prisma:5432/restaurantdb
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      AWS_ACCESS_ID: 746821e246db980671669811641e8cd6
+      AWS_SECRET_ACCESS_KEY: 1365c2f0f4cae29ddf0d4ab9bddbd008318c1aee481905e3117774b1023d1f2c
+      CLOUDFLARE_R2_ENDPOINT: https://877c13c47034b3117afb33536964f2fb.r2.cloudflarestorage.com
+    ports:
+      - "8080:8080"
+    depends_on:
+      - pg-prisma
+    networks:
+      - ms-network
+
   pg-prisma:
     image: bitnami/postgresql:latest
     container_name: restaurant-db
@@ -10,4 +31,5 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=restaurantdb
-      - DATABASE_URL=jdbc:postgresql://localhost:5433/restaurantdb
+    networks:
+      - ms-network
