@@ -49,18 +49,14 @@ public class DishService {
     Pageable pageable = PageRequest.of(pageNumber, pageSize);
 
     if(query != null) {
-      return this.dishRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(
-        query,
-        query,
-        pageable
-      );
+      return this.dishRepository.searchDishes(query, pageable);
     }
 
     return this.dishRepository.findAll(pageable);
   }
 
   public Dish getById(UUID dishId) {
-    return this.dishRepository.findByIdWithIngredients(dishId).orElseThrow(() -> new ResourceNotFoundException(
+    return this.dishRepository.findById(dishId).orElseThrow(() -> new ResourceNotFoundException(
       "Prato não encontrado"));
   }
 

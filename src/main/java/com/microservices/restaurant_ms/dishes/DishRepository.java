@@ -12,12 +12,8 @@ import java.util.UUID;
 
 @Repository
 public interface DishRepository extends JpaRepository<Dish, UUID> {
-  Page<Dish> findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(
-      String name,
-      String description,
-      Pageable pageable
-  );
 
-  @Query("SELECT d FROM Dish d LEFT JOIN FETCH d.ingredients WHERE d.id = :id")
-  Optional<Dish> findByIdWithIngredients(@Param("id") UUID id);
+  @Query("SELECT d FROM Dish d WHERE LOWER(d.name) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(d.description) LIKE LOWER(CONCAT('%', :query, '%'))")
+  Page<Dish> searchDishes(@Param("query") String query, Pageable pageable);
+
 }
