@@ -43,3 +43,14 @@ jobs:
         with:
           push: true
           tags: thiago0503/restaurant-ms:${{steps.generate_tag.outputs.sha}}, thiago0503/restaurant-ms:latest
+
+  deploy:
+      needs: build
+      runs-on: self-hosted
+      steps:
+        - name: Pull image docker hub
+          run: docker pull thiago0503/restaurant-ms:latest
+        - name: remove container
+          run: docker rm -f restaurant-ms
+        - name: Run docker container
+          run: docker run -d -p 8080 -e CLOUDFLARE_R2_ENDPOINT=${{secrets.CLOUDFLARE_R2_ENDPOINT}} -e AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}} -e AWS_ACCESS_ID=${{secrets.AWS_ACCESS_ID}} -e DATABASE_URL=${{secrets.DATABASE_URL}} --name restaurant-ms thiago0503/restaurant-ms:latest
